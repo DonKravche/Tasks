@@ -165,14 +165,17 @@ code {
    (index.html)
    ---------------------------------- */
 .box {
-    background-color: #ccc; 
-    width: 100px;           
+    background-color: red; 
+    width: 200px;           
     height: 100px;
     display: flex;
     justify-content: center; 
     align-items: center;     
     transition: all 0.3s ease; 
     cursor: pointer;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .box:hover {
@@ -189,20 +192,26 @@ code {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     max-width: 500px;
-    text-align: left; /* შეცვალე ეს */
+    text-align: center; /* შეცვალე ეს */
 }
 
 .main-title {
     /* დაწერე კოდი აქ */
     color: #333;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .description {
     /* დაწერე კოდი აქ */
+    color: #666;
+    line-height: 1.5;
 }
 
 .highlight {
     /* დაწერე კოდი აქ */
+    color: #007bff;
+    text-decoration: underline;
 }
 
 /* ----------------------------------
@@ -217,6 +226,9 @@ code {
     justify-content: center;
     align-items: center;
     /* დაწერე კოდი აქ */
+    border: 5px solid #61dafb;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* ----------------------------------
@@ -228,8 +240,10 @@ code {
     width: 100%;
     height: 300px;
     border-radius: 8px;
-    display: block; /* შეცვალე flex-ით */
+    display: flex; /* შეცვალე flex-ით */
     /* დაამატე flex თვისებები აქ */
+    justify-content: space-around;
+    align-items: center;
     padding: 10px;
     gap: 10px;
 }
@@ -263,7 +277,11 @@ code {
 }
 
 /* დაწერე .btn:hover ქვემოთ */
-
+.btn:hover {
+    background-color: #61dafb;
+    color: #1e1e24;
+    transform: translate(-5px);
+}
 
 /* ----------------------------------
    დავალება 6: სიები (Lists)
@@ -275,11 +293,14 @@ code {
     padding: 20px 20px 20px 40px;
     border-radius: 8px;
     width: 300px;
+    list-style-type: none;
+    padding-left: 10px;
 }
 
 .custom-list li {
     /* სტილები სიის ელემენტისთვის */
     margin-bottom: 10px;
+    border-left: 3xp solid #61dafb;
 }
 
 /* ----------------------------------
@@ -295,11 +316,16 @@ code {
 
 .styled-input {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
 }
 
+.styled-input:focus {
+    outline: none;
+    border-color: #61dafb;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
 /* ----------------------------------
    დავალება 8: პოზიციონირება (Absolute)
    (task8.html)
@@ -317,8 +343,10 @@ code {
     height: 80px;
     background-color: #ff6b6b;
     border-radius: 50%;
-    position: static; /* შეცვალე absolute-ით */
+    position: absolute; /* შეცვალე absolute-ით */
     /* დააყენე top და right */
+    top: -20px;
+    right: -20px;
 }
 
 /* ----------------------------------
@@ -328,7 +356,8 @@ code {
 .hero-section {
     width: 100%;
     height: 300px;
-    background-color: #ddd;
+    /* background: linear-gradient(45deg, #ff9a9e, #fad0c4); */
+    background: linear-gradient(to right, #61dafb, #2b2b36);
     /* დაამატე background-image და background-size */
     display: flex;
     justify-content: center;
@@ -351,8 +380,16 @@ code {
     border-radius: 50%;
     position: relative;
     /* დაამატე animation property */
+    animation: bounce 1s ease-in-out;
 }
 
 @keyframes bounce {
     /* დაწერე keyframes აქ */
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
 }
